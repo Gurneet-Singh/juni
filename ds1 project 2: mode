@@ -1,0 +1,38 @@
+'''
+INSTRUCTIONS:
+Using your knowledge of dictionaries, extend your Simple Stats project to compute the mode. The mode is the value that appears most frequently in the dataset. Note: there may be more than one mode if there are ties!
+
+Bonus: Edit summary() so that it doesn’t print anything, but instead returns a dictionary of statistics. Make the keys the names of the statistics and the values the actual stats. Then write a function that can print every entry of the dictionary on a separate line.
+'''
+
+data1 = [-21,-15,-60,-60,-45,-34,-20,-21,-10,-30]
+
+def mode(l):
+  d1 = {}
+  for i in l:
+    if i not in d1:
+      d1[i] = 1
+    else:
+      d1[i] += 1
+  
+  val = []
+  for i in d1:
+    val.append(d1[i])
+  key = []
+  for i in d1.keys():
+    key.append(i)
+  
+  MAX = val[0]
+  for i in val:
+    if int(MAX) < int(i):
+      MAX = i
+  
+  maxnums = []
+  for i in range(len(val)):
+    if val[i] == MAX:
+      maxnums.append(key[i])
+  
+  return maxnums
+  
+
+print(mode(data1))
