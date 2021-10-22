@@ -1,0 +1,46 @@
+'''
+INSTRUCTIONS:
+The following images show the damage (indicated by the red dots) on aircrafts that returned from a mission. Create clusters of data by splitting the plane into regions and compare the damage in each cluster using a bar graph, to determine where reinforcements need to be applied to the planes.
+'''
+
+# part 1
+import matplotlib.pyplot as plt
+import seaborn as sns
+# create lists for each plane, like [front, left wing, center, right wing, back]
+p1 = [1, 6, 1, 8, 4]
+p2 = [0, 5, 3, 8, 4]
+p3 = [4, 5, 0, 6, 5]
+p4 = [1, 7, 1, 10, 9]
+p5 = [1, 12, 2, 15, 11]
+total = [7, 35, 5, 47, 33]
+
+# clusters
+sns.set()
+
+clusters = ["front", "l_wing", "mid", "r_wing", "back"]
+plt.title("damage frequency: returned")
+plt.bar(clusters, total)
+plt.xlabel("parts of the plane")
+plt.ylabel("damage")
+plt.show()
+
+# part 2
+
+total = [23, 14, 61, 12, 12]
+
+clusters = ["front", "l_wing", "mid", "r_wing", "back"]
+plt.title("damage frequency: ocean")
+plt.bar(clusters, total)
+plt.xlabel("parts of the plane")
+plt.ylabel("damage")
+plt.show()
+
+# part 3
+
+'''
+What conclusions can we draw from your analysis? Where should the plane be reinforced so that more planes return from missions? Was there a relationship between the total damage and planes returning?
+
+we should apply more armor to the middle because if an anti-aircraft turret hits the middle (with the pilot), it should be armored so the pilot has a better chance at surviving and the middle should not be damaged hard. fuel effiecency would decrease due to the weight of the armor on the plane
+
+other answer (isnt mine): This data illustrates what's known as survivorship bias. While initially one might consider reinforcing the areas of the planes that were damaged from the returned planes, the damage on the returned planes illustrates where they can be damaged and still return. Meanwhile when analyzing those planes that were found in the ocean, it is clear that damage to the front and middle clusters was likely what caused them to not return and should be reinforced. Engineers who design planes have to consider how weight impacts fuel efficiency, speed, and maneuverability. While ideally you would design a plane that is fully reinforced, a balance should be found between reinforcement and other performance metrics. While there was a slight discrepancy in the total damage between the two groups (129 - returned, 122 - ocean), we cannot conclude that total damage is correlated with a planes' chance of returning, but more likely location of damage.
+'''
