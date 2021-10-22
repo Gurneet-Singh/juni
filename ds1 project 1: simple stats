@@ -1,0 +1,71 @@
+'''
+INSTRUCTIONS:
+You’ve been given lists of different temperatures. In order to analyze this information, write the following functions to generate some summarizing statistics:
+count(): returns the number of items in the list
+my_sum(): returns the sum
+mean(): returns the mean, the average
+median(): returns the median, the middle item
+my_max(): returns the max, the largest item
+my_min(): returns the min, the smallest item
+my_range(): returns the difference between the max and min
+summary(): prints out all the summary statistics for the given list
+'''
+
+data1 = [-21,-15,-60,-60,-45,-34,-20,-21,-10,-30]
+data2 = [54,54,56,56,56,51,57,57,57,58,51,54]
+data3 = [32,43,87,56,34,21,21,90,76,72,63]
+
+def count(l):
+  return len(l)
+
+def my_sum(l):
+  num = 0
+  for i in l:
+    num += int(i)
+  return num
+
+def mean(l):
+  return my_sum(l)/count(l)
+
+def median(l):
+  l.sort()
+  if count(l) % 2 == 0:
+    num = count(l)
+    num = int(num/2)
+    return (l[num] + l[num - 1])/2
+  else:
+    num = count(l)
+    num = num/2
+    num = int(num)
+    return l[num]
+
+def my_max(l):
+  if len(l) == 0:
+    return None
+  else:
+    MAX = l[0]
+    for i in l:
+      if MAX < i:
+        MAX = i
+    return MAX
+
+def my_min(l):
+  if len(l) == 0:
+    return None
+  else:
+    MIN = l[0]
+    for i in l:
+      if MIN > i:
+        MIN = i
+    return MIN
+
+def my_range(l):
+  return my_max(l) - my_min(l)
+
+print("number of temperatures:", str(count(data1)))
+print("all temperatures combined:", str(my_sum(data1)))
+print("average temperature:", str(mean(data1)))
+print("middle temperature in the list:", str(median(data1)))
+print("hottest temperature:", str(my_max(data1)))
+print("coldest temperature:", str(my_min(data1)))
+print("range:", str(my_range(data1)))
