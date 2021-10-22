@@ -1,0 +1,44 @@
+'''
+INSTRUCTIONS:
+A car company has been receiving constant complaints about the engines in their new car. Customers report engine overheating, so the company has compiled a table of the following data from these complaints. The Internal Temperature records the temperature of the engine when it was overheating.
+
+Plotting the data could help identify which categories are most likely to be contributing to this issue.
+
+Organize the data into lists, storing data from each category in ascending order. Then plot these lists against the corresponding Internal Temperature, displaying only one plot at a time in the cell. If there seems to be a clear linear relationship (a straight line) then the company will know to investigate these categories further.1
+'''
+
+# part 1
+import matplotlib.pyplot as plt
+
+coolant = [33, 55, 12]
+speed = [50, 60, 55]
+age = [38, 26, 24]
+external = [83, 105, 63]
+internal = [240, 260, 220]
+
+plt.title("internal vs coolant")
+plt.scatter(internal, coolant)
+plt.show()
+
+plt.title("internal vs speed")
+plt.scatter(internal, speed)
+plt.show()
+
+plt.title("internal vs age")
+plt.scatter(internal, age)
+plt.show()
+
+plt.title("internal vs external")
+plt.scatter(internal, external)
+plt.show()
+
+# part 2
+'''
+What categories are most likely contributing to this issue? Was there any data that wasn't useful?
+
+Analysis:
+
+as coolant increases, internal temperature also increases. as external temperature increases, internal temperature also increases. speed and age are a bit weird and there isnt a strong relationship. the patterns for both aren't linear. we didn't plot color because it's just a display and its not numerical.
+
+other response (not mine): Both the engine coolant level and the external temperature seem to have a clear linear relationship with the internal temperature. Age and average speed didn't seem to have a clear relationship. Additionally, the color of the color can't be plotted since it is a categorical variable (non-numerical).
+'''
